@@ -59,6 +59,7 @@ rosters_df =
                team_roster == "NOR" ~ "NO",
                team_roster == "NWE" ~ "NE",
                team_roster == "TAM" ~ "TB",
+               team_roster == "KAN" ~ 'KC',
                TRUE ~ team_roster),
            clean_draft = 
              case_when(
@@ -72,6 +73,7 @@ rosters_df =
                draft_club_roster  == "NOR" ~ "NO",
                draft_club_roster  == "NWE" ~ "NE",
                draft_club_roster  == "TAM" ~ "TB",
+               draft_club_roster == "KAN" ~ 'KC',
                TRUE ~ draft_club_roster))
 
 # Clean draft_df team abbreviations
@@ -89,6 +91,7 @@ draft_df =
              team_draft == "NOR" ~ "NO",
              team_draft == "NWE" ~ "NE",
              team_draft == "TAM" ~ "TB",
+             team_draft == "KAN" ~ 'KC',
              TRUE ~ team_draft))
 
 
@@ -172,22 +175,10 @@ completed_stats = left_join(final_player_stats, joined_master_draft, by = c("gsi
 
 
 
-  
-  
 
+write.csv(completed_stats, "C:/Users/drez_/Desktop/data_424/FinalProject/Real_Final_Project/completed_stats.csv")
 
-
-
-
-
-
-
-
-
-
-
-
-
+write.csv(joined_master_draft, "C:/Users/drez_/Desktop/data_424/FinalProject/Real_Final_Project/completed_draft.csv")
 
 
 
